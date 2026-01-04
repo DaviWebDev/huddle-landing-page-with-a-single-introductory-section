@@ -1,0 +1,112 @@
+/*Tokens e base*/
+:root {
+    /*Cores primárias*/
+    --purple-700: hsl(257, 40%, 49%);
+    --magenta-400: hsl(300, 69%, 71%);
+    /*Font-size pré-definidos*/
+    --fs-title: clamp(1.5rem, 2.5vw, 2.5rem);
+    --fs-subtitle: clamp(1.15rem, 2.25vw, 2.25rem);
+    --fs-text: clamp(1rem, 1.75vw, 1.125rem);
+    /*Esparaçamentos Pré-definidos*/
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    /*Fontes para usar*/
+    --poppins: "Poppins", sans-serif;
+    --open-sans: "Open Sans", sans-serif;
+}
+
+body {
+    background: var(--purple-700) url(../images/bg-mobile.svg) top center / contain no-repeat;
+    font-family: var(--open-sans);
+    font-size: 16px;
+    padding: 2rem 1.75rem;
+}
+
+/*layout*/
+
+.main {
+    display: flex;
+    margin: 4rem 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+/*componentes*/
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.hero__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+}
+
+/*elementos*/
+
+.hero__title,
+.hero__description {
+    color: white;
+    max-width: 100%;
+}
+
+.header__logo {
+    width: clamp(180px, 40%, 250px);
+}
+
+.hero__image img {
+    width: clamp(250px, 100%, 400px);
+    margin: 0 auto;
+}
+
+.hero__title {
+    font-family: var(--poppins);
+    font-size: var(--fs-title);
+    font-weight: 600;
+}
+
+.hero__description {
+    font-size: var(--fs-text);
+}
+
+.hero__btn {
+    background-color: white;
+    color: var(--purple-700);
+    width: clamp(200px, 80%, 300px);
+    height: 45px;
+    border-radius: 2rem;
+    box-shadow: 0 3px 4px 2px rgba(0, 0, 0, 0.15);
+    align-self: center;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    fill: white;
+    transition: fill .3s ease-in-out;
+}
+
+/*State*/
+
+.hero__btn:hover {
+    background-color: var(--magenta-400);
+    color: white;
+}
+
+.icon:hover {
+    fill: var(--magenta-400);
+}
